@@ -19,7 +19,7 @@
     "@sendgrid/client": "^7.7.0",
     "@sendgrid/mail": "^7.7.0",
     "@vercel/analytics": "^0.1.6",
-    "@vercel/og": "^0.0.26",
+    "@vercel/og": "^0.5.20",
     "classnames": "^2.3.2",
     "cloudinary": "^1.41.0",
     "cookies-next": "^4.1.0",
