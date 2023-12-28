@@ -29,7 +29,7 @@
     "eslint-config-next": "13.1.1",
     "focus-trap-react": "^10.0.2",
     "framer-motion": "^10.16.5",
-    "html-react-parser": "^4.2.2",
+    "html-react-parser": "^4.2.10",
     "lucide-react": "^0.292.0",
     "ms": "^2.1.3",
     "next": "^13.5.6",
