@@ -27,7 +27,7 @@
     "cloudinary": "^1.41.0",
     "cookies-next": "^4.1.0",
     "encoding": "^0.1.13",
-    "eslint": "8.31.0",
+    "eslint": "8.53.0",
     "eslint-config-next": "13.1.1",
     "focus-trap-react": "^10.0.2",
     "framer-motion": "^10.16.5",
