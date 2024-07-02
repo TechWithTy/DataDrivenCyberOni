@@ -1,4 +1,5 @@
 import GridBlogCard from "@/components/blogs/GridBlogCard";
+import CopyButton from "@/components/CopyButton";
 import Pagination from "@/components/Pagination";
 import { getBlogsByCategory } from "@/crud/blog";
 import { DisplayBlogDTO } from "@/crud/DTOs";
@@ -18,9 +19,7 @@ async function BlogsInCategoryPage({ params, searchParams }: { params: { name: s
             <div className="container mx-auto ">
                 <div className="mx-10 text-3xl my-5 capitalize flex gap-5 items-center">
                     {name}
-                    <Link href={`/blogs/rss/category/${params.name}`}>
-                        <Rss />
-                    </Link>
+                    <CopyButton text={`${process.env.NEXTAUTH_URL}/blogs/rss/category/${params.name}/feed.xml`}  icon={<Rss />}></CopyButton>
                 </div>
             </div>
             <div className="w-full ">

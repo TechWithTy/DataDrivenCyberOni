@@ -22,6 +22,7 @@ const imageLocations = [
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  pageExtensions: ['xml',  'tsx', 'ts'],
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: imageLocations.map((location) => ({ hostname: location })),
@@ -100,8 +101,7 @@ const nextConfig = {
         source: "/freelancer",
         destination: "https://www.freelancer.com/u/CodingOni",
         permanent: false,
-      },
-     
+      },     
     ];
   },
   experimental: {

@@ -11,6 +11,8 @@ import { DisplayBlogDTO } from "@/crud/DTOs";
 import GridBlogCard from "@/components/blogs/GridBlogCard";
 import { IdealBankElement } from "@stripe/react-stripe-js";
 import Pagination from "@/components/Pagination";
+import CopyButton from "@/components/CopyButton";
+import { Rss } from "lucide-react";
 
 async function BlogList({ params, searchParams }: { params: { list: string }, searchParams: { [key: string]: string | string[] | undefined } }) {
     let { id } = searchParams
@@ -22,6 +24,7 @@ async function BlogList({ params, searchParams }: { params: { list: string }, se
             <div className="container mx-auto ">
                 <div className="mx-10 text-3xl my-5 capitalize">
                     {params.list}
+                    {params.list=='new' && <CopyButton icon={<Rss />} text={`${process.env.NEXTAUTH_URL}/blogs/rss/latest/feed.xml`} />}
                 </div>
                 <div className="mx-10 w-1/2">
                     {listData[params.list]}

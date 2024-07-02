@@ -16,17 +16,16 @@ export async function GET() {
     throw new Error("NEXTAUTH_URL is not defined in environment variables");
   }
 
-  const encodeUrl = (url: string) =>{
+  const encodeUrl = (url: string) => {
     return (url).replace(/'/g, "%27");
   }
 
-
-
   const xmlContent = `<?xml version="1.0" encoding="UTF-8" ?>
-  <rss version="2.0">        
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">        
         <channel>
             <title>Latest Cyberoni Blogs</title>
             <link>${baseUrl}/blogs/recent</link>
+            <atom:link href="${baseUrl}/blogs/rss/latest/feed.xml" rel="self" type="application/rss+xml" />
             <description>Latest Cyberoni Blogs related to web development and AI</description>
         </channel>   
   </rss>`;
@@ -41,15 +40,19 @@ export async function GET() {
     const title = xmlDoc.createElement("title");
     const link = xmlDoc.createElement("link");
     const description = xmlDoc.createElement("description");
+    const guid = xmlDoc.createElement("guid");
     const blogUrl = `${baseUrl}/blogs/post/${seoUrl(blog.title, blog.id)}`;
 
     title.innerHTML = blog.title;
-    link.innerHTML = encodeUrl(blogUrl);
+    link.innerHTML = encodeUrl(blogUrl)
     description.innerHTML = blog.description;
+    guid.innerHTML = blogUrl
 
     item.appendChild(title);
     item.appendChild(link);
     item.appendChild(description);
+    item.appendChild(guid)
+
     channel.appendChild(item);
   });
 
