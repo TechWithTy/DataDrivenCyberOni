@@ -19,6 +19,7 @@ import GoogleCaptchaWrapper from "@/components/GoogleCaptchaWrapper";
 import { useNotify } from "@/components/Notification";
 import PayLater from "@/components/shared/Paylater";
 import { useReCaptcha } from "next-recaptcha-v3";
+import React from "react";
 //import CalendlyPopup from "@/components/Calendly";
 // import CalendlyModal from "@/components/Calendly/CalendlyModal";
 
@@ -82,14 +83,13 @@ function ContactUs({ searchParams }: { searchParams: { name: string, email: stri
     //   ? new Date(newValue?.startDate as string).toLocaleDateString()
     //   : "";
 
-    let date = newValue?.startDate
+      let date = newValue?.startDate
       ? typeof newValue.startDate === "string"
         ? new Date(newValue.startDate).toLocaleDateString()
         : newValue.startDate instanceof Date
-          ? newValue.startDate.toLocaleDateString()
-          : ""
+        ? newValue.startDate.toLocaleDateString()
+        : ""
       : "";
-
     setMovinDate(newValue);
     setFormData((prev) => ({ ...prev, date }));
   };
