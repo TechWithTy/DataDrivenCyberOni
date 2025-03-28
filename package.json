@@ -37,7 +37,7 @@
     "classnames": "^2.5.1",
     "cloudinary": "^1.41.2",
     "clsx": "^2.1.1",
-    "cookies-next": "^4.1.0",
+    "cookies-next": "^4.3.0",
     "embla-carousel-react": "^8.0.4",
     "encoding": "^0.1.13",
     "focus-trap-react": "^10.0.2",
